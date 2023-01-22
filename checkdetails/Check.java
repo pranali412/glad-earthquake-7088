@@ -15,7 +15,7 @@ public class Check {
 			message =ConsoleColors.RED +  "Password Length Must Be Greater Or Equal To 4"+ ConsoleColors.RESET;
 		}else if(s.contains("@") || s.contains("#") || s.contains("$") || s.contains("%") || s.contains("&")) {
 			
-			message = ConsoleColors.GREEN+"Strong Password"+ ConsoleColors.RESET;
+			message ="Strong Password";
 			
 		}else {
 			message = ConsoleColors.RED + "Password Must Contain At Least One Character From -->  @,#,$,%,& "+ ConsoleColors.RESET;
@@ -60,19 +60,19 @@ public class Check {
 		if(e.length() < 11) {
 			message = ConsoleColors.RED+"Length Of Email Must Be Greater Than 8 Including ->  @gmail.com"+ConsoleColors.RESET;
 		}
-		//else if(e.contains("!") || e.contains("#") || e.contains("$") || e.contains("%") || e.contains("&")) {
+		else if(e.contains("!") || e.contains("#") || e.contains("$") || e.contains("%") || e.contains("&")) {
 			
 			if(e.contains("@gmail.com")) {
 				
-				message = ConsoleColors.GREEN+"Strong Email"+ConsoleColors.RESET;
+				message ="Strong Email";
 			}else {
 				message = ConsoleColors.RED+"Email Must Contain ->  @gmail.com"+ConsoleColors.RESET;
 			}
 			
-	//	}
-	//else {
-		//	message = "Email Must Contain At Least One Character From -->  !,#,$,%,&";
-	//	}
+		}
+	else {
+			message = "Email Must Contain At Least One Character From -->  !,#,$,%,&";
+		}
 		
 		
 		return message;

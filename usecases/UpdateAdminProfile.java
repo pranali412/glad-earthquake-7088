@@ -2,6 +2,7 @@ package com.masai.usecases;
 
 import java.util.Scanner;
 
+import com.masai.ConsoleColors.ConsoleColors;
 import com.masai.application.AdminOperations;
 import com.masai.application.AdminOrEmployee;
 import com.masai.bean.Admin;
@@ -31,7 +32,7 @@ public class UpdateAdminProfile {
 		
 		AdminDaoImpl adi = new AdminDaoImpl(password,email);
 		
-		System.out.println("Enter The New Name");
+		System.out.println(ConsoleColors.LIGHT_PINK+"Enter The New Name"+ConsoleColors.RESET);
 		String name =  s.nextLine();
 		String email = Check.checkemail();
 		String pass = Check.checkPass();
@@ -41,7 +42,7 @@ public class UpdateAdminProfile {
 		String res;
 		try {
 			res = adi.updateProfile(admin);
-			System.out.println(res);
+			System.out.println(ConsoleColors.GREEN+ res+ConsoleColors.RESET);
 			System.out.println("=============================================");
 			AdminOrEmployee.choice();
 		} catch (AdminException e) {
